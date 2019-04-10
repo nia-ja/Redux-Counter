@@ -1,14 +1,16 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 
-export const increment = () => {
+export const increment = (count) => {
   return {
-    type: INCREMENT
+    type: INCREMENT,
+    payload: count
   }
 };
 
-export const decrement = () => {
+export const decrement = (count) => {
   return {
-    type: DECREMENT
+    type: DECREMENT,
+    payload: count
   }
 };
