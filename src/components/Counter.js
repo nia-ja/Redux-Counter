@@ -33,19 +33,17 @@ class Counter extends Component {
                     <p>
                         Clicked: <span>{this.props.count}</span> times
                     </p>
-                    <button onClick={this.incrementHandler}>
-                        +
-                    </button>
-                    <button onClick={this.decrementHandler}>
-                        -
-                    </button>
-                    <button onClick={this.incrementIfOdd}>
-                        Increment if odd
-                    </button>
-                    <button onClick={this.incrementAsync}>
-                        Increment async
-                    </button>
-                    <button onClick={this.clearHandler}>Clear</button>
+                    <div className="controls">
+                        <button className="operations" onClick={this.incrementHandler}>+</button>
+                        <button className="operations" onClick={this.decrementHandler}>-</button>
+                        <button onClick={this.incrementIfOdd}>
+                            Increment if odd
+                        </button>
+                        <button onClick={this.incrementAsync}>
+                            Increment async
+                        </button>
+                        <button className="clear" onClick={this.clearHandler}>Clear</button>
+                    </div>
                 </div>
             </div>
         );
