@@ -14,24 +14,21 @@ class Counter extends Component {
     };
     incrementHandler = e => {
         e.preventDefault();
-        this.props.increment(this.state.count);
+        this.props.increment(this.props.count);
     }
     decrementHandler = e => {
         e.preventDefault();
-        this.props.decrement(this.state.count);
+        this.props.decrement(this.props.count);
     }
 
     render() {
-        // Fill in the two button onClick methods
-        // Upon clicking these buttons, the count
-        // should decrement or increment accordingly
         return (
             <p>
                 Clicked: {this.props.count} times
-                <button onClick={() => {this.incrementHandler}}>
+                <button onClick={this.incrementHandler}>
                     +
                 </button>
-                <button onClick={() => {this.decrementHandler}}>
+                <button onClick={this.decrementHandler}>
                     -
                 </button>
                  {/* Uncomment these button tags if you got
@@ -46,22 +43,10 @@ class Counter extends Component {
         );
     }
 }
-
-{/* // The mapStateToProps function specifies which portion of the
-// state tree this component needs to receive. In this case,
-// since our redux store is only storing the value of the count,
-// this component receives the whole state. In a more complex
-// redux application, though, it would receive only the relevant
-// parts it needs from the state object. */}
 const mapStateToProps = (state) => {
     return {
         count: state.count
     };
 };
 
-{/* // The connect function is called in order to make this component aware
-// of the rest of the redux architecture. Without this, this component
-// is only a dumb React component. We pass in all of the functions that
-// are reliant on Redux, along with the component itself, so that Redux
-// makes itself known to this component. */}
 export default connect(mapStateToProps, { increment, decrement })(Counter);
