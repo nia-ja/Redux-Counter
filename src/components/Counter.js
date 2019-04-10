@@ -24,24 +24,25 @@ class Counter extends Component {
 
     render() {
         return (
-            <div className="Counter">
-                <p>
-                    Clicked: <span>{this.props.count}</span> times
-                </p>
-                <button onClick={this.incrementHandler}>
-                    +
-                </button>
-                <button onClick={this.decrementHandler}>
-                    -
-                </button>
-                <button onClick={this.incrementIfOdd}>
-                    Increment if odd
-                </button>
-                <button onClick={this.incrementAsync}>
-                    Increment async
-                </button>
+            <div className="App">
+                <div className="Counter">
+                    <p>
+                        Clicked: <span>{this.props.count}</span> times
+                    </p>
+                    <button onClick={this.incrementHandler}>
+                        +
+                    </button>
+                    <button onClick={this.decrementHandler}>
+                        -
+                    </button>
+                    <button onClick={this.incrementIfOdd}>
+                        Increment if odd
+                    </button>
+                    <button onClick={this.incrementAsync}>
+                        Increment async
+                    </button>
+                </div>
             </div>
-            
         );
     }
 }
