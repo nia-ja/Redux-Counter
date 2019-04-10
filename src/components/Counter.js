@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { increment, decrement } from '../actions';
+import { increment, decrement, clear } from '../actions';
 
 class Counter extends Component {
     incrementIfOdd = e => {
@@ -20,6 +20,10 @@ class Counter extends Component {
     decrementHandler = e => {
         e.preventDefault();
         this.props.decrement(this.props.count);
+    }
+    clearHandler = e => {
+        e.preventDefault();
+        this.props.clear();
     }
 
     render() {
@@ -41,6 +45,7 @@ class Counter extends Component {
                     <button onClick={this.incrementAsync}>
                         Increment async
                     </button>
+                    <button onClick={this.clearHandler}>Clear</button>
                 </div>
             </div>
         );
@@ -52,4 +57,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, { increment, decrement })(Counter);
+export default connect(mapStateToProps, { increment, decrement, clear })(Counter);
