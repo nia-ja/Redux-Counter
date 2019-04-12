@@ -6,20 +6,20 @@ class Counter extends Component {
     incrementIfOdd = e => {
         e.preventDefault();
         if (this.props.count % 2  !== 0) {
-            this.props.increment(this.props.count);
+            this.props.increment();
         }
     };
     incrementAsync = e => {
         e.preventDefault();
-        setTimeout(() => this.props.increment(this.props.count), 1000);
+        setTimeout(() => this.props.increment(), 1000);
     };
     incrementHandler = e => {
         e.preventDefault();
-        this.props.increment(this.props.count);
+        this.props.increment();
     }
     decrementHandler = e => {
         e.preventDefault();
-        this.props.decrement(this.props.count);
+        this.props.decrement();
     }
     clearHandler = e => {
         e.preventDefault();
